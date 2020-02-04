@@ -5,7 +5,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import train_test_split
 import pickle
 
-df = pd.read_csv('water_supply.csv')
+df = pd.read_csv('water_dataset.csv')
 X_train_validate, X_test, y_train_validate, y_test = train_test_split(df.drop('water', axis=1), df['water'].ravel())
 
 dtrain = xgb.DMatrix(X_train_validate.values, label=y_train_validate.tolist())
